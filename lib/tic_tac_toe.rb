@@ -112,12 +112,11 @@ def play
   end
 
   if won?
-    puts "Congratulations, #{winner}!"
-  else
-    if draw?
-      puts "Game has ended in a draw!"
+      puts "Congratulations, #{winner}!"
+    elsif draw?
+        puts "Game has ended in a draw!"
+      end
     end
-  end
 
 
 
