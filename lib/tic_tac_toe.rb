@@ -19,8 +19,8 @@ class TicTacToe
   end
 
   def input_to_index(user_input)
-    user_input.to_1 - 1 
-  end 
+    user_input.to_1 - 1
+  end
 
   def move(index, current_player = "X")
     @board[index] = current_player
@@ -29,16 +29,16 @@ class TicTacToe
   def position_taken?(position)
     if @board[position] == "X" || @board[position] == "O"
       true
-    else 
+    else
       false
     end
   end
 
   def valid_move?(position)
-    position = position.to_i - 1 
+    position = position.to_i - 1
     if position.between?(0,8) && !position_taken?(position)
       true
-    else 
+    else
       false
     end
   end
@@ -72,8 +72,8 @@ class TicTacToe
       board_empty = @board.none? { |i| i == "X" || i = "O"}
   if board_empty
     false
-  else 
-    WIN_COMBINATIONS.each do |combo| 
+  else
+    WIN_COMBINATIONS.each do |combo|
       if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X" || @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
         return combo
       end
@@ -94,13 +94,13 @@ class TicTacToe
     won? || draw? || full? ? true : false
   end
 
-  def winner 
-    WIN_COMBINATIONS.detect do |combo| 
-       if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X" 
+  def winner
+    WIN_COMBINATIONS.detect do |combo|
+       if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
          return "X"
        elsif @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
          return "O"
-       else 
+       else
          nil
        end
    end
@@ -118,7 +118,7 @@ def play
       puts "Game has ended in a draw!"
     end
   end
-    
+
 
 
 end
